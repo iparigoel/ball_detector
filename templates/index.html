@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ball Detector (WebSocket)</title>
+</head>
+<body>
+  <h1>Live Circle Detection</h1>
+  <img src="{{ url_for('video_feed') }}" width="720">
+  <div id="center_x">Center X: </div>
+  <div id="center_y">Center Y: </div>
+  <div id="radius">Radius: </div>
+
+  <script>
+    const ws = new WebSocket("ws://" + location.host + "/ws");
+
+    ws.onopen = function () {
+      console.log("WebSocket connected");
+    };
+
+    ws.onmessage = function (event) {
+      const data = JSON.parse(event.data.replace(/'/g, '"'));
+      document.getElementById("center_x").innerText = "Center X: " + data.x;
+      document.getElementById("center_y").innerText = "Center Y: " + data.y;
+      document.getElementById("radius").innerText = "Radius: " + data.r;
+    };
+
+    ws.onclose = function () {
+      console.log("WebSocket disconnected");
+    };
+  </script>
+</body>
+</html>
