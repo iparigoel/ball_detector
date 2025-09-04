@@ -26,6 +26,7 @@ ball_detector/
 Clone the repository:
 
 git clone https://github.com/iparigoel/ball_detector.git
+
 cd ball_detector
 
 Install dependencies:
