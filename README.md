@@ -13,6 +13,7 @@ This project demonstrates real-time circular object detection using OpenCV, serv
 ⚡ Sends circle coordinates (x, y) and radius r in real time via WebSocket.
 
 ## 📂 Project Structure
+```bash
 ball_detector/
 │
 ├── app.py                # Flask app entry point
@@ -20,23 +21,28 @@ ball_detector/
 ├── requirements.txt      # Python dependencies
 ├── templates/
 │   └── index.html        # Frontend for live video + detection data
+```
 
 ## 🛠️ Installation
 
 Clone the repository:
 
+```bash
 git clone https://github.com/iparigoel/ball_detector.git
-
 cd ball_detector
+```
 
 Install dependencies:
-
+```bash
 pip install -r requirements.txt
+```
 
 ## ▶️ Usage
 
 Start the Flask server:
+```bash
 python app.py
+```
 
 Open your browser and navigate to:
 👉 http://127.0.0.1:5000/
